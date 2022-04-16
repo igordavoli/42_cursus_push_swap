@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:27:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/12 15:00:18 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/15 23:03:19 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 int		ft_get_nbr_size(int n);
 
+// LINKED-LIST
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
@@ -100,10 +101,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
+// DOUBLE-LINKED-LIST
 int		ft_dlstsize(t_dlist *lst);
 t_dlist	*ft_dlstnew(void *content);
 t_dlist	*ft_dlstlast(t_dlist *lst);
@@ -112,9 +113,16 @@ t_dlist	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstdelone(t_dlist *lst, void (*del)(void*));
-void	ft_dlstdelone(t_dlist *lst, void (*del)(void*));
 void	ft_dlstclear(t_dlist **lst, void (*del)(void*));
 void	ft_dlstiter(t_dlist *lst, void (*f)(void *));
+
+// CIRCULAR-DOUBLE-LINKED-LIST
+int		ft_cir_dlstsize(t_dlist *lst);
+t_dlist	*ft_cir_dlstnew(void *content);
+t_dlist	*ft_cir_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_cir_dlstiter(t_dlist *lst, void (*f)(void *));
+void	ft_cir_dlstadd_front(t_dlist **lst, t_dlist *new);
+void	ft_cir_dlstadd_back(t_dlist **lst, t_dlist *new);
 
 void	ft_free_ptrs(void **ptr);
 void	ft_free_ptr(void **ptr);

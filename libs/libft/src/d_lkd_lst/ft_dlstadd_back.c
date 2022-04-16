@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 22:45:08 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/12 15:01:43 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/15 22:36:55 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_dlstadd_back(t_dlist **dlst, t_dlist *new)
 {
-	t_dlist *last;
+	t_dlist	*last;
 
 	if (!(*dlst))
 		*dlst = new;
@@ -23,6 +23,5 @@ void	ft_dlstadd_back(t_dlist **dlst, t_dlist *new)
 		last = ft_dlstlast(*dlst);
 		last->next = new;
 		new->prev = last;
-
 	}
 }

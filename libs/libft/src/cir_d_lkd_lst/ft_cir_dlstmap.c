@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstclear.c                                     :+:      :+:    :+:   */
+/*   ft_cir_dlstmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 23:25:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/15 23:16:39 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/12 23:43:41 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/15 22:38:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_dlstclear(t_dlist **lst, void (*del)(void*))
+t_dlist	*ft_cir_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *))
 {
-	t_dlist	*tmp;
+	t_dlist	*new;
 	t_dlist	*begin;
+	t_dlist	*new_lst;
 
-	if (lst)
+	if (dlst)
 	{
-		begin = *lst;
-		while (*lst)
+		new_lst = ft_dlstnew(f(dlst->content));
+		begin = dlst;
+		dlst = dlst->next;
+		while (1)
 		{
-			tmp = (*lst)->next;
-			ft_dlstdelone(*lst, del);
-			(*lst) = tmp;
-			if (*lst == begin)
+			if (dlst == begin)
 				break ;
+			new = ft_dlstnew(f(dlst->content));
+			if (!new)
+			{
+				ft_dlstclear(&new_lst, del);
+				return (NULL);
+			}
+			ft_cir_dlstadd_back(&new_lst, new);
+			dlst = dlst->next;
 		}
+		return (new_lst);
 	}
+	return (NULL);
 }

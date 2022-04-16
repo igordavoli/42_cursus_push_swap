@@ -72,13 +72,21 @@ SRC_FILES	+=	lkd_lst/ft_lstmap.c \
 SRC_FILES	+=	d_lkd_lst/ft_dlstmap.c \
 				d_lkd_lst/ft_dlstdelone.c \
 				d_lkd_lst/ft_dlstadd_back.c \
+				d_lkd_lst/ft_dlstadd_front.c \
 				d_lkd_lst/ft_dlstsize.c \
 				d_lkd_lst/ft_dlstnew.c \
 				d_lkd_lst/ft_dlstiter.c \
 				d_lkd_lst/ft_dlstlast.c \
 				d_lkd_lst/ft_dlstfirst.c \
-				d_lkd_lst/ft_dlstclear.c \
-				d_lkd_lst/ft_dlstadd_front.c
+				d_lkd_lst/ft_dlstclear.c
+
+# CIRCULAR-DUBLE_LINKED-LIST
+SRC_FILES	+=	cir_d_lkd_lst/ft_cir_dlstadd_back.c \
+				cir_d_lkd_lst/ft_cir_dlstadd_front.c \
+				cir_d_lkd_lst/ft_cir_dlstiter.c \
+				cir_d_lkd_lst/ft_cir_dlstmap.c \
+				cir_d_lkd_lst/ft_cir_dlstnew.c \
+				cir_d_lkd_lst/ft_cir_dlstsize.c
 
 # READ AND WRITE
 SRC_FILES	+=	rw/ft_putendl_fd.c \
@@ -116,6 +124,7 @@ $(OBJ_DIR):
 	mkdir -p objects/mem
 	mkdir -p objects/lkd_lst
 	mkdir -p objects/d_lkd_lst
+	mkdir -p objects/cir_d_lkd_lst
 	mkdir -p objects/rw/ft_printf
 	mkdir -p objects/str/ft_split2/utils
 

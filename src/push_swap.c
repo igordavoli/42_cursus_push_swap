@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_cir.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/12 15:07:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/15 23:18:09 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void create_lst(t_push_swap *ps)
 	{
 		swp = (int *)malloc(sizeof(int));
 		*swp = ft_atoi(ps->argv[i + 1]);
-		ft_dlstadd_back(&ps->stack_a, ft_dlstnew((void *)swp));
+		ft_cir_dlstadd_back(&ps->stack_a, ft_cir_dlstnew((void *)swp));
 		i++;
 	}
 }
@@ -65,16 +65,15 @@ int	main(int argc, char **argv)
 	ps.argv = argv;
 	ft_set_null(&ps);
 	ft_push_swap_init(&ps, argc, argv);
-	printf("%d\n", ft_dlstsize(ps.stack_a));
-	ft_dlstiter(ps.stack_a, &print_lst);
-	ft_dlstiter(ps.stack_a, &print_lst);
+	printf("%d\n", ft_cir_dlstsize(ps.stack_a));
+	ft_cir_dlstiter(ps.stack_a, &print_lst);
 	ft_printf("\n");
 
-	last = ft_dlstlast(ps.stack_a);
+	last = ps.stack_a->prev;
 	num = (int *)last->content;
 	printf("%d\n", *num);
-	first = ft_dlstfirst(last);
-	num = first->content;
+	first = last->next;
+	num = (int *)first->content;
 	printf("%d\n", *num);
 
 	ft_dlstclear(&ps.stack_a, *del);

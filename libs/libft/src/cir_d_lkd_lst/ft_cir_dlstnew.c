@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bubble_sort.c                                   :+:      :+:    :+:   */
+/*   ft_cir_dlstnew.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 22:37:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/15 22:37:44 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/12 16:26:21 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/15 22:34:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_bubble_sort(int *tab, int size)
+t_dlist	*ft_cir_dlstnew(void *content)
 {
-	int		i;
-	int		j;
-	int		swp;
+	t_dlist	*new;
 
-	j = 0;
-	while (j < size)
-	{
-		i = 1;
-		while (i < size)
-		{
-			if (tab[i - 1] > tab[i])
-			{
-				swp = tab[i - 1];
-				tab[i - 1] = tab[i];
-				tab[i] = swp;
-			}
-			i++;
-		}
-		j++;
-	}
+	new = (t_dlist *)malloc(sizeof(t_dlist));
+	if (!new)
+		return (NULL);
+	new->content = (void *)content;
+	new->next = new;
+	new->prev = new;
+	return (new);
 }
