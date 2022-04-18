@@ -16,7 +16,17 @@ SRC_DIR_BONUS = src_checker
 OBJ_DIR_BONUS = objects_bonus
 HEADER_BONUS = $(SRC_DIR_BONUS)/checker.h
 
-SRC_FILES = push_swap.c\
+SRC_FILES	=	push_swap.c \
+				operations/sa.c \
+				operations/sb.c \
+				operations/pa.c \
+				operations/pb.c \
+				operations/ra.c \
+				operations/rb.c \
+				operations/rr.c \
+				operations/rra.c \
+				operations/rrb.c \
+				operations/rrr.c
 
 
 # SRC_FILES_BONUS = pipex_bonus.c\
