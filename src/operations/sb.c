@@ -6,31 +6,20 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 17:03:15 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/16 18:54:11 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/19 22:48:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sb(t_push_swap *ps)
 {
-	t_dlist	*last;
-	t_dlist	*first;
-	t_dlist	*second;
-	t_dlist	*third;
+	void *swp;
 
-	if (ps->b_size > 1)
+	if (ps->a_size > 1)
 	{
-		last = ps->b->prev;
-		first = ps->b;
-		second = ps->b->next;
-		third = ps->b->next->next;
-		last->next = second;
-		second->prev = last;
-		second->next = first;
-		first->prev = second;
-		first->next = third;
-		third->prev = first;
-		ps->b = second;
+		swp = ps->b->content;
+		ps->b->content = (ps->b->next)->content;
+		(ps->b->next)->content = swp;
 	}
 }

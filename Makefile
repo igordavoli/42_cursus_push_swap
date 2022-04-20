@@ -17,6 +17,7 @@ OBJ_DIR_BONUS = objects_bonus
 HEADER_BONUS = $(SRC_DIR_BONUS)/checker.h
 
 SRC_FILES	=	push_swap.c \
+				push_swap_init.c \
 				operations/sa.c \
 				operations/sb.c \
 				operations/pa.c \
@@ -60,6 +61,7 @@ $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 	mkdir $(OBJ_DIR)/utils
+	mkdir $(OBJ_DIR)/operations
 
 clean:
 	rm -rf objects*
@@ -77,7 +79,7 @@ test: all
 
 val: all
 	make re
-	$(VALGRIND) ./$(NAME) 1 2 3 4 5 6 7 8 9 0
+	$(VALGRIND) ./$(NAME) 3 1 2
 
 # bonus: $(NAME_BONUS)
 
