@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 22:55:45 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/21 23:54:38 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:19:10 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 static void	ft_set_null(t_push_swap *ps)
 {
-	ps->argc = 0;
-	ps->argv = NULL;
 	ps->a = NULL;
 	ps->b = NULL;
 	ps->op_lst_bgn = NULL;
 	ps->op_lst_end = NULL;
 }
 
-static void	create_lst(t_push_swap *ps)
+static void	create_lst(t_push_swap *ps, char **argv)
 {
 	int		i;
 	int		*swp;
 
 	i = 0;
-	while (i < ps->argc - 1)
+	while (i < ps->a_size)
 	{
 		swp = (int *)malloc(sizeof(int));
-		*swp = ft_atoi(ps->argv[i + 1]);
+		*swp = ft_atoi(argv[i + 1]);
 		ft_cir_dlstadd_back(&ps->a, ft_cir_dlstnew((void *)swp));
 		i++;
 	}
@@ -40,9 +38,7 @@ static void	create_lst(t_push_swap *ps)
 void	push_swap_init(t_push_swap *ps, int argc, char **argv)
 {
 	ft_set_null(ps);
-	ps->argc = argc;
-	ps->argv = argv;
 	ps->a_size = argc - 1;
 	ps->b_size = 0;
-	create_lst(ps);
+	create_lst(ps, argv);
 }

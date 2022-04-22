@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/21 21:52:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/22 00:42:07 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 typedef struct s_push_swap
 {
-	int		argc;
-	char	**argv;
+	int		*argv_int;
 	t_dlist	*a;
 	int		a_size;
 	t_dlist	*b;
@@ -45,4 +44,5 @@ void	sort(t_push_swap *ps);
 void	sort_two(t_push_swap *ps);
 void	sort_three(t_push_swap *ps);
 void	clear(t_push_swap *ps);
+void	ft_close(t_push_swap *ps, char *msg, int code);
 #endif
