@@ -38,6 +38,7 @@ SRC_FILES	+=	str/ft_split2/utils/ft_get_wrd_size.c \
 #CHARS
 SRC_FILES	+=	ft_isdigit.c \
 				ft_isascii.c \
+				ft_isspace.c \
 				ft_isprint.c \
 				ft_isalpha.c \
 				ft_isalnum.c \
@@ -45,6 +46,7 @@ SRC_FILES	+=	ft_isdigit.c \
 				ft_toupper.c \
 				ft_itoa.c \
 				ft_atoi.c \
+				ft_atol.c \
 				ft_bubble_sort.c
 # MEMORY
 SRC_FILES	+=	mem/ft_memcmp.c \
