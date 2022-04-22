@@ -6,11 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 22:55:45 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/19 23:00:28 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/21 23:54:38 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_set_null(t_push_swap *ps)
 {
@@ -18,9 +18,11 @@ static void	ft_set_null(t_push_swap *ps)
 	ps->argv = NULL;
 	ps->a = NULL;
 	ps->b = NULL;
+	ps->op_lst_bgn = NULL;
+	ps->op_lst_end = NULL;
 }
 
-static void create_lst(t_push_swap *ps)
+static void	create_lst(t_push_swap *ps)
 {
 	int		i;
 	int		*swp;

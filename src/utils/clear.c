@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/21 23:53:32 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/04/21 21:08:29 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/21 23:52:45 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "../push_swap.h"
 
-void	prints(t_push_swap *ps);
-
-void	print_ops(void *content)
+static void	del(void *lst)
 {
-	ft_printf("%s\n", (char *)content);
+	free(lst);
 }
 
-int	main(int argc, char **argv)
+void	clear(t_push_swap *ps)
 {
-	t_push_swap ps;
-
-	push_swap_init(&ps, argc, argv);
-	sort(&ps);
-	ft_dlstiter(ps.op_lst_end, &print_ops);
-	clear(&ps);
-	return (0);
+	ft_dlstclear(&(ps->a), *del);
+	ft_dlstclear(&(ps->b), *del);
+	ft_dlstclear(&(ps->op_lst_end), *del);
 }

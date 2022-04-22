@@ -1,5 +1,7 @@
 .PHONY: all clean fclean re
 
+TEST_LIST = 1 3 2
+
 CC = gcc
 
 CFLAGS = -g3 -Wall -Wextra -Werror
@@ -17,9 +19,18 @@ OBJ_DIR_BONUS = objects_bonus
 HEADER_BONUS = $(SRC_DIR_BONUS)/checker.h
 
 SRC_FILES	=	push_swap.c \
-				push_swap_init.c \
-				operations/sa.c \
+				prints.c
+
+SRC_FILES	+=	utils/sort.c \
+				utils/clear.c \
+				utils/execute.c \
+				utils/sort_two.c \
+				utils/sort_three.c \
+				utils/push_swap_init.c \
+
+SRC_FILES	+=	operations/sa.c \
 				operations/sb.c \
+				operations/ss.c \
 				operations/pa.c \
 				operations/pb.c \
 				operations/ra.c \
@@ -27,7 +38,8 @@ SRC_FILES	=	push_swap.c \
 				operations/rr.c \
 				operations/rra.c \
 				operations/rrb.c \
-				operations/rrr.c
+				operations/rrr.c \
+
 
 
 # SRC_FILES_BONUS = pipex_bonus.c\
@@ -75,7 +87,7 @@ re:
 	@make fclean && make all
 
 test: all
-	./$(NAME) 1 2 3 4 5 6 7 8 9 0
+	./$(NAME) $(TEST_LIST) | ./checker $(TEST_LIST)
 
 val: all
 	make re
