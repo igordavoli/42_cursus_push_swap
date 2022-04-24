@@ -27,6 +27,7 @@ SRC_FILES	+=	utils/sort.c \
 				utils/ft_close.c \
 				utils/sort_two.c \
 				utils/sort_three.c \
+				utils/sort_four.c \
 				utils/push_swap_init.c \
 
 SRC_FILES	+=	operations/sa.c \
@@ -40,8 +41,6 @@ SRC_FILES	+=	operations/sa.c \
 				operations/rra.c \
 				operations/rrb.c \
 				operations/rrr.c \
-
-
 
 # SRC_FILES_BONUS = pipex_bonus.c\
 # 	ft_pipex_init_bonus.c\
@@ -88,7 +87,7 @@ re:
 	@make fclean && make all
 
 test: all
-	./$(NAME) $(TEST_LIST) | ./checker $(TEST_LIST)
+	./$(NAME) $(TEST_LIST) | ./checker_ $(TEST_LIST)
 
 val: all
 	make re

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/22 00:42:07 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/23 23:20:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	execute(t_push_swap *ps, char *op);
 void	sort(t_push_swap *ps);
 void	sort_two(t_push_swap *ps);
 void	sort_three(t_push_swap *ps);
+void	sort_four(t_push_swap *ps);
 void	clear(t_push_swap *ps);
 void	ft_close(t_push_swap *ps, char *msg, int code);
 #endif
