@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:27:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/22 00:52:43 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/26 22:50:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strjoin2(char const *s1, char const *s2, int free_s1, int free_s2);
+char		*ft_strjoin2(char const *s1, char const *s2, int free_s1,
+				int free_s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *str, char c);
 char		**ft_split2(char const *s, char c);
@@ -122,7 +123,8 @@ void		ft_dlstiter(t_dlist *lst, void (*f)(void *));
 // CIRCULAR-DOUBLE-LINKED-LIST
 int			ft_cir_dlstsize(t_dlist *lst);
 t_dlist		*ft_cir_dlstnew(void *content);
-t_dlist		*ft_cir_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
+t_dlist		*ft_cir_dlstmap(t_dlist *lst, void *(*f)(void *),
+				void (*del)(void *));
 void		ft_cir_dlstiter(t_dlist *lst, void (*f)(void *));
 void		ft_cir_dlstadd_front(t_dlist **lst, t_dlist *new);
 void		ft_cir_dlstadd_back(t_dlist **lst, t_dlist *new);

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/23 23:20:04 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/26 22:28:30 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	rr(t_push_swap *ps);
 void	rra(t_push_swap *ps);
 void	rrb(t_push_swap *ps);
 void	rrr(t_push_swap *ps);
+void	check_args(int argc, char **argv);
 void	push_swap_init(t_push_swap *ps, int argc, char **argv);
 void	execute(t_push_swap *ps, char *op);
 void	sort(t_push_swap *ps);

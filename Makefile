@@ -22,6 +22,7 @@ SRC_FILES	=	push_swap.c \
 				prints.c
 
 SRC_FILES	+=	utils/sort.c \
+				utils/check_args.c \
 				utils/clear.c \
 				utils/execute.c \
 				utils/ft_close.c \
