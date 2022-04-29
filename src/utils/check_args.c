@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:27:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/26 22:52:48 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/28 22:24:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	has_invalid_char(char **argv, int size)
+static int	has_invalid_char(char **argv, int size)
 {
 	int	i;
 	int	j;
@@ -34,41 +34,42 @@ int	has_invalid_char(char **argv, int size)
 	return (0);
 }
 
-long int	*convert_to_ld(char **argv, int size)
+static t_idxd	*convert_to_ld(char **argv, int size)
 {
 	int			i;
-	long int	*arr;
+	t_idxd		*idxd;
 
-	arr = (long int *)malloc(sizeof(long int) * size);
+	idxd = (t_idxd *)malloc(sizeof(t_idxd) * size);
 	i = 0;
 	while (i < size)
 	{
-		arr[i] = ft_atol(argv[i + 1]);
-		if (arr[i] < INT_MIN || arr[i] > INT_MAX)
+		idxd[i].num = ft_atol(argv[i + 1]);
+		if (idxd[i].num < INT_MIN || idxd[i].num > INT_MAX)
 		{
-			free(arr);
+			free(idxd);
 			return (NULL);
 		}
+		idxd[i].index = -1;
 		i++;
 	}
-	return (arr);
+	return (idxd);
 }
 
-int	is_sorted(long int *arr, int size)
+static int	is_sorted(t_idxd *idxd, int size)
 {
 	int	i;
 
 	i = 1;
 	while (i < size)
 	{
-		if (arr[i - 1] > arr[i])
+		if (idxd[i - 1].num > idxd[i].num)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	has_repeated(long int *arr, int size)
+static int	has_repeated(t_idxd *idxd, int size)
 {
 	int	i;
 	int	j;
@@ -79,7 +80,7 @@ int	has_repeated(long int *arr, int size)
 		j = i + 1;
 		while (j < size)
 		{
-			if (arr[i] == arr[j++])
+			if (idxd[i].num == idxd[j++].num)
 				return (1);
 		}
 		i++;
@@ -87,28 +88,30 @@ int	has_repeated(long int *arr, int size)
 	return (0);
 }
 
-void	check_args(int argc, char **argv)
+t_idxd	*check_args(int argc, char **argv)
 {
-	long int	*tmp;
+	t_idxd	*idxd;
 
 	if (argc < 3)
 		exit(0);
 	if (has_invalid_char(argv, argc - 1))
-		ft_close(NULL, "invalid char!", 1);
-	tmp = convert_to_ld(argv, argc -1);
-	if (tmp == NULL)
+		ft_close(NULL, 1);
+	idxd = convert_to_ld(argv, argc -1);
+	if (idxd == NULL)
 	{
-		free(tmp);
-		ft_close(NULL, "out of limit value!", 1);
+		free(idxd);
+		ft_close(NULL, 1);
 	}
-	if (is_sorted(tmp, argc - 1))
+	if (is_sorted(idxd, argc - 1))
 	{
-		free(tmp);
+		free(idxd);
 		exit(0);
 	}
-	if (has_repeated(tmp, argc - 1))
+	if (has_repeated(idxd, argc - 1))
 	{
-		free(tmp);
-		ft_close(NULL, "repeated number!", 1);
+		free(idxd);
+		ft_close(NULL, 1);
 	}
+	indexer(idxd, argc - 1);
+	return (idxd);
 }
