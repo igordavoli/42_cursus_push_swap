@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close.c                                         :+:      :+:    :+:   */
+/*   execute_n.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 00:37:06 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/28 00:03:49 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/04/28 22:27:03 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/28 22:27:09 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_close(t_push_swap *ps, int code)
+void	execute_n(t_push_swap *ps, char *op, int n)
 {
-	if (code)
-		ft_putstr_fd("Error\n", 1);
-	if (ps)
-	{
-		clear(ps);
-	}
-	exit(1);
+	while (n--)
+		execute(ps, op);
 }

@@ -25,11 +25,15 @@ SRC_FILES	+=	utils/sort.c \
 				utils/check_args.c \
 				utils/clear.c \
 				utils/execute.c \
+				utils/execute_n.c \
 				utils/ft_close.c \
 				utils/sort_two.c \
 				utils/sort_three.c \
 				utils/sort_four.c \
 				utils/push_swap_init.c \
+				utils/get_node_value.c \
+				utils/indexer.c \
+
 
 SRC_FILES	+=	operations/sa.c \
 				operations/sb.c \

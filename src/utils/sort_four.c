@@ -6,18 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/26 23:24:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/28 22:27:29 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_value(t_dlist *node)
-{
-	return (*(int *)node->content);
-}
-
-int	get_smaller_index(t_dlist *dlst)
+static int	get_smaller_index(t_dlist *dlst)
 {
 	int		smaller_value;
 	int		smaller_index;
@@ -25,27 +20,21 @@ int	get_smaller_index(t_dlist *dlst)
 	int		i;
 
 	beg = dlst;
-	smaller_value = get_value(beg);
+	smaller_value = get_node_value(beg);
 	smaller_index = 0;
 	dlst = dlst->next;
 	i = 1;
 	while (beg != dlst)
 	{
-		if (get_value(dlst) < smaller_value)
+		if (get_node_value(dlst) < smaller_value)
 		{
-			smaller_value = get_value(dlst);
+			smaller_value = get_node_value(dlst);
 			smaller_index = i;
 		}
 		dlst = dlst->next;
 		i++;
 	}
 	return (smaller_index);
-}
-
-void	execute_n(t_push_swap *ps, char *op, int n)
-{
-	while (n--)
-		execute(ps, op);
 }
 
 void	sort_four(t_push_swap *ps)

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/26 22:28:30 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/28 22:27:19 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 # include "../libs/libft/src/libft.h"
 
+typedef struct s_idxd
+{
+	long int	num;
+	int			index;
+}	t_idxd;
 typedef struct s_push_swap
 {
-	int		*argv_int;
+	t_idxd	*idxd;
 	t_dlist	*a;
 	int		a_size;
 	t_dlist	*b;
@@ -38,13 +43,16 @@ void	rr(t_push_swap *ps);
 void	rra(t_push_swap *ps);
 void	rrb(t_push_swap *ps);
 void	rrr(t_push_swap *ps);
-void	check_args(int argc, char **argv);
-void	push_swap_init(t_push_swap *ps, int argc, char **argv);
+t_idxd	*check_args(int argc, char **argv);
+void	indexer(t_idxd *idxd, int size);
+void	push_swap_init(t_push_swap *ps, int list_size);
 void	execute(t_push_swap *ps, char *op);
 void	sort(t_push_swap *ps);
 void	sort_two(t_push_swap *ps);
 void	sort_three(t_push_swap *ps);
 void	sort_four(t_push_swap *ps);
 void	clear(t_push_swap *ps);
-void	ft_close(t_push_swap *ps, char *msg, int code);
+void	ft_close(t_push_swap *ps, int code);
+int		get_node_value(t_dlist *node);
+void	execute_n(t_push_swap *ps, char *op, int n);
 #endif
