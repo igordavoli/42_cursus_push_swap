@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/30 00:21:05 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/30 18:35:18 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	get_smaller_index(t_dlist *dlst)
+static int	get_target_index(t_dlist *dlst, char target)
 {
 	int		smaller_value;
 	int		smaller_index;
@@ -26,7 +26,8 @@ static int	get_smaller_index(t_dlist *dlst)
 	i = 1;
 	while (beg != dlst)
 	{
-		if (get_node_value(dlst) < smaller_value)
+		if ((get_node_value(dlst) < smaller_value && target == 's' )||
+			(get_node_value(dlst) > smaller_value && target== 'b') )
 		{
 			smaller_value = get_node_value(dlst);
 			smaller_index = i;
@@ -45,7 +46,7 @@ int	sort_few(t_push_swap *ps)
 
 	while (ps->a_size > 3)
 	{
-		small_i = get_smaller_index(ps->a);
+		small_i = get_target_index(ps->a, 's');
 		last_i = ps->a_size - 1;
 		if (small_i <= (last_i / 2))
 			execute_n(ps, "ra", small_i);

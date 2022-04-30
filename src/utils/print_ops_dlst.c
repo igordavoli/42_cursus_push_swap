@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   print_ops.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/30 18:25:29 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/04/30 18:18:03 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/30 18:20:29 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+# include "../push_swap.h"
 
-void	sort(t_push_swap *ps)
+static void	print_ops(void *content)
 {
-	if (ps->a_size == 2)
-		sort_two(ps);
-	if (ps->a_size == 3)
-		sort_three(ps);
-	if (ps->a_size <= 7)
-		sort_few(ps);
-	if (ps->a_size <= 10)
-		sort_few(ps);
+	ft_printf("%s\n", (char *)content);
+}
+
+void print_ops_dlst(t_dlist *ops)
+{
+	ft_dlstiter(ops, &print_ops);
 }

@@ -34,7 +34,7 @@ SRC_FILES	+=	utils/sort.c \
 				utils/get_node_value.c \
 				utils/indexer.c \
 				utils/is_cir_dlst_sorted.c \
-
+				utils/print_ops_dlst.c
 
 SRC_FILES	+=	operations/sa.c \
 				operations/sb.c \
@@ -46,7 +46,7 @@ SRC_FILES	+=	operations/sa.c \
 				operations/rr.c \
 				operations/rra.c \
 				operations/rrb.c \
-				operations/rrr.c \
+				operations/rrr.c
 
 # SRC_FILES_BONUS = pipex_bonus.c\
 # 	ft_pipex_init_bonus.c\
