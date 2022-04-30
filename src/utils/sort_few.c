@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   sort_few.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/28 22:27:29 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/04/30 00:21:05 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ static int	get_smaller_index(t_dlist *dlst)
 	return (smaller_index);
 }
 
-void	sort_four(t_push_swap *ps)
+int	sort_few(t_push_swap *ps)
 {
 	int	small_i;
 	int	last_i;
+	int is_sorted;
 
 	while (ps->a_size > 3)
 	{
@@ -50,9 +51,17 @@ void	sort_four(t_push_swap *ps)
 			execute_n(ps, "ra", small_i);
 		else
 			execute_n(ps, "rra", last_i - small_i + 1);
+		is_sorted =	is_cir_dlst_sorted(ps->a);
+		if (is_sorted && !ps->b_size)
+			return (0);
+		else if (is_sorted && ps->b_size)
+		{
+			execute_n(ps, "pa", ps->b_size);
+			return (0);
+		}
 		execute(ps, "pb");
 	}
 	sort_three(ps);
-	while (ps->b_size)
-		execute(ps, "pa");
+	execute_n(ps, "pa", ps->b_size);
+	return (0);
 }

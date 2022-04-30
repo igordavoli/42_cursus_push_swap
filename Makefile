@@ -29,10 +29,11 @@ SRC_FILES	+=	utils/sort.c \
 				utils/ft_close.c \
 				utils/sort_two.c \
 				utils/sort_three.c \
-				utils/sort_four.c \
+				utils/sort_few.c \
 				utils/push_swap_init.c \
 				utils/get_node_value.c \
 				utils/indexer.c \
+				utils/is_cir_dlst_sorted.c \
 
 
 SRC_FILES	+=	operations/sa.c \

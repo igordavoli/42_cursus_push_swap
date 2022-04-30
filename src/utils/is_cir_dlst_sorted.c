@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   is_dlst_sorted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/30 00:23:23 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/04/30 00:18:27 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/04/30 00:18:40 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort(t_push_swap *ps)
+int	is_cir_dlst_sorted(t_dlist *dlst)
 {
-	if (ps->a_size == 2)
-		sort_two(ps);
-	if (ps->a_size == 3)
-		sort_three(ps);
-	if (ps->a_size >= 4)
-		sort_few(ps);
+	t_dlist *beg;
+
+	beg = dlst;
+	dlst = dlst->next;
+	while (dlst != beg)
+	{
+		if (get_node_value(dlst) < get_node_value(dlst->prev))
+			return (0);
+		dlst = dlst->next;
+	}
+	return (1);
 }
