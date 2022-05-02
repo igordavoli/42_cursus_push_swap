@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:55:18 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/18 20:29:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/01 16:32:58 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rr(t_push_swap *ps)
 {
-	if (ps->a_size)
+	if (ps->a_size > 1)
 		ps->a = ps->a->next;
-	if (ps->b_size)
+	if (ps->b_size > 1)
 		ps->b = ps->b->next;
 }

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 17:03:15 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/21 23:53:47 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/01 16:34:21 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sb(t_push_swap *ps)
 {
 	void	*swp;
 
-	if (ps->a_size > 1)
+	if (ps->b_size > 1)
 	{
 		swp = ps->b->content;
 		ps->b->content = (ps->b->next)->content;
