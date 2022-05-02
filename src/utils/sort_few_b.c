@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_few.c                                         :+:      :+:    :+:   */
+/*   sort_few_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 16:58:39 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/01 17:16:22 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,21 @@ static int	get_target_index(t_dlist *dlst, char target)
 	return (smaller_index);
 }
 
-int	sort_few(t_push_swap *ps)
+int	sort_few_b(t_push_swap *ps)
 {
-	int	small_i;
+	int	big_i;
 	int	last_i;
-	int is_sorted;
 
-	while (ps->a_size > 3)
+	while (ps->b_size)
 	{
-		small_i = get_target_index(ps->a, 's');
-		last_i = ps->a_size - 1;
-		if (small_i <= (last_i / 2))
-			execute_n(ps, "ra", small_i);
+		big_i = get_target_index(ps->b, 'b');
+		last_i = ps->b_size - 1;
+		if (big_i <= (last_i / 2))
+			execute_n(ps, "rb", big_i);
 		else
-			execute_n(ps, "rra", last_i - small_i + 1);
-		is_sorted =	is_cir_dlst_sorted(ps->a);
-		if (is_sorted && !ps->b_size)
-			return (0);
-		else if (is_sorted && ps->b_size)
-		{
-			execute_n(ps, "pa", ps->b_size);
-			return (0);
-		}
-		execute(ps, "pb");
+			execute_n(ps, "rrb", last_i - big_i + 1);
+		execute(ps, "pa");
 	}
-	sort_three(ps, 'a');
 	execute_n(ps, "pa", ps->b_size);
 	return (0);
 }
