@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 22:55:45 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/28 22:20:10 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/03 10:18:20 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ void	push_swap_init(t_push_swap *ps, int list_size)
 	ft_set_null(ps);
 	ps->a_size = list_size;
 	ps->b_size = 0;
+	ps->chepest.n_op_a = list_size;
+	ps->chepest.n_op_b = list_size;
+	ps->chepest.op_a = "";
+	ps->chepest.op_b = "";
 	create_lst(ps);
 }

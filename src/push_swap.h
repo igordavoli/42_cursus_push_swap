@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 17:00:02 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:31:31 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,24 @@ typedef struct s_idxd
 	long int	num;
 	int			index;
 }	t_idxd;
+
+typedef struct s_costpa
+{
+	int		n_op_a;
+	char	*op_a;
+	int		n_op_b;
+	char	*op_b;
+} t_costpa;
 typedef struct s_push_swap
 {
-	t_idxd	*idxd;
-	t_dlist	*a;
-	int		a_size;
-	t_dlist	*b;
-	int		b_size;
-	t_dlist	*op_lst_bgn;
-	t_dlist	*op_lst_end;
+	t_idxd		*idxd;
+	t_dlist		*a;
+	int			a_size;
+	t_dlist		*b;
+	int			b_size;
+	t_dlist		*op_lst_bgn;
+	t_dlist		*op_lst_end;
+	t_costpa 	chepest;
 }	t_push_swap;
 
 void	sa(t_push_swap *ps);
