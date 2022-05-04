@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_huge.c                                        :+:      :+:    :+:   */
+/*   sort_huge_no_that_good.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 22:29:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 21:14:10 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:17:32 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../push_swap.h"
 
 int	quick_stack_a(t_push_swap *ps, int f, int i)
 {
-	int		ref;
-	int		a_init_size;
+	int	ref;
+	int	a_init_size;
 
 	if (!ps->a_size)
 		return (0);
 	ref = f * i;
 	a_init_size = ps->a_size;
-	if(get_node_value(ps->a) < ref)
-		execute(ps,"pb");
+	if (get_node_value(ps->a) < ref)
+		execute(ps, "pb");
 	else
-		execute(ps,"ra");
+		execute(ps, "ra");
 	while (ps->a_size > a_init_size - f)
 	{
-		if(get_node_value(ps->a) < ref)
-			execute(ps,"pb");
+		if (get_node_value(ps->a) < ref)
+			execute(ps, "pb");
 		else
-			execute(ps,"ra");
+			execute(ps, "ra");
 	}
 	return (0);
 }
@@ -45,21 +44,21 @@ int	quick_stack_b(t_push_swap *ps)
 		return (0);
 	ref = ps->b_size / 2;
 	beg = ps->b;
-	if(get_node_value(ps->b) < ref)
-		execute(ps,"rb");
+	if (get_node_value(ps->b) < ref)
+		execute(ps, "rb");
 	else
-		execute(ps,"pa");
+		execute(ps, "pa");
 	while (ps->b != beg)
 	{
-		if(get_node_value(ps->b) < ref)
-			execute(ps,"rb");
+		if (get_node_value(ps->b) < ref)
+			execute(ps, "rb");
 		else
-			execute(ps,"pa");
+			execute(ps, "pa");
 	}
 	return (0);
 }
 
-void	sort_huge(t_push_swap *ps)
+void	sort_huge_no_that_good(t_push_swap *ps)
 {
 	int	i;
 	int	f;
@@ -74,6 +73,6 @@ void	sort_huge(t_push_swap *ps)
 	while (ps->a_size > f)
 		quick_stack_a(ps, f, i++);
 	while (ps->a_size)
-		execute(ps,"pb");
+		execute(ps, "pb");
 	sort_few_b(ps);
 }

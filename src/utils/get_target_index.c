@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_cir_dlst_sorted.c                               :+:      :+:    :+:   */
+/*   get_target_index.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 00:18:27 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/04 14:19:28 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/05/04 10:31:50 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/05/04 14:22:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_cir_dlst_sorted(t_dlist *dlst)
+int	get_target_index(t_dlist *dlst, char target)
 {
+	int		smaller_value;
+	int		smaller_index;
 	t_dlist	*beg;
+	int		i;
 
 	beg = dlst;
+	smaller_value = get_node_value(beg);
+	smaller_index = 0;
 	dlst = dlst->next;
-	while (dlst != beg)
+	i = 1;
+	while (beg != dlst)
 	{
-		if (get_node_value(dlst) < get_node_value(dlst->prev))
-			return (0);
+		if ((get_node_value(dlst) < smaller_value && target == 's' )
+			|| (get_node_value(dlst) > smaller_value && target == 'b'))
+		{
+			smaller_value = get_node_value(dlst);
+			smaller_index = i;
+		}
 		dlst = dlst->next;
+		i++;
 	}
-	return (1);
+	return (smaller_index);
 }

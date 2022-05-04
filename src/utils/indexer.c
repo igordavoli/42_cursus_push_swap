@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:22:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 00:48:36 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:54:51 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	get_smaller_i_n_idxd(t_idxd *idxd, int size)
 	smaller = idxd[i].num;
 	while (i < size)
 	{
-		while (idxd[i].index != -1 && i < size)
+		while (idxd[i].index != -1 && i < size - 1)
 			i++;
 		if (idxd[i].num < smaller && idxd[i].index == -1)
 		{

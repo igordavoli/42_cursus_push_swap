@@ -6,37 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 17:16:22 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:52:11 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static int	get_target_index(t_dlist *dlst, char target)
-{
-	int		smaller_value;
-	int		smaller_index;
-	t_dlist	*beg;
-	int		i;
-
-	beg = dlst;
-	smaller_value = get_node_value(beg);
-	smaller_index = 0;
-	dlst = dlst->next;
-	i = 1;
-	while (beg != dlst)
-	{
-		if ((get_node_value(dlst) < smaller_value && target == 's' ) ||
-			(get_node_value(dlst) > smaller_value && target== 'b') )
-		{
-			smaller_value = get_node_value(dlst);
-			smaller_index = i;
-		}
-		dlst = dlst->next;
-		i++;
-	}
-	return (smaller_index);
-}
 
 int	sort_few_b(t_push_swap *ps)
 {

@@ -19,7 +19,6 @@ OBJ_DIR_BONUS = objects_bonus
 HEADER_BONUS = $(SRC_DIR_BONUS)/checker.h
 
 SRC_FILES	=	push_swap.c \
-				prints.c
 
 SRC_FILES	+=	utils/sort.c \
 				utils/check_args.c \
@@ -35,8 +34,11 @@ SRC_FILES	+=	utils/sort.c \
 				utils/get_node_value.c \
 				utils/indexer.c \
 				utils/is_cir_dlst_sorted.c \
-				utils/sort_huge.c \
-				utils/print_ops_dlst.c
+				sort_huge/sort_huge.c \
+				sort_huge/sort_huge_util.c \
+				utils/print_ops_dlst.c \
+				utils/get_target_index.c\
+				utils/get_target_ref.c
 
 SRC_FILES	+=	operations/sa.c \
 				operations/sb.c \
@@ -81,6 +83,7 @@ $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 	mkdir $(OBJ_DIR)/utils
+	mkdir $(OBJ_DIR)/sort_huge
 	mkdir $(OBJ_DIR)/operations
 
 clean:

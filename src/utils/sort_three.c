@@ -6,12 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 17:12:07 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:22:59 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 void	sort_a(t_push_swap *ps)
 {
@@ -39,6 +38,7 @@ void	sort_a(t_push_swap *ps)
 		execute(ps, "sa");
 	}
 }
+
 void	sort_b(t_push_swap *ps)
 {
 	int	first;
@@ -68,7 +68,7 @@ void	sort_b(t_push_swap *ps)
 
 void	sort_three(t_push_swap *ps, char stack)
 {
-	if(stack == 'a')
+	if (stack == 'a')
 		sort_a(ps);
 	else if (stack == 'b')
 		sort_b(ps);

@@ -6,43 +6,17 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/01 16:58:39 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:20:22 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	get_target_index(t_dlist *dlst, char target)
-{
-	int		smaller_value;
-	int		smaller_index;
-	t_dlist	*beg;
-	int		i;
-
-	beg = dlst;
-	smaller_value = get_node_value(beg);
-	smaller_index = 0;
-	dlst = dlst->next;
-	i = 1;
-	while (beg != dlst)
-	{
-		if ((get_node_value(dlst) < smaller_value && target == 's' ) ||
-			(get_node_value(dlst) > smaller_value && target== 'b') )
-		{
-			smaller_value = get_node_value(dlst);
-			smaller_index = i;
-		}
-		dlst = dlst->next;
-		i++;
-	}
-	return (smaller_index);
-}
-
 int	sort_few(t_push_swap *ps)
 {
 	int	small_i;
 	int	last_i;
-	int is_sorted;
+	int	is_sorted;
 
 	while (ps->a_size > 3)
 	{
@@ -52,7 +26,7 @@ int	sort_few(t_push_swap *ps)
 			execute_n(ps, "ra", small_i);
 		else
 			execute_n(ps, "rra", last_i - small_i + 1);
-		is_sorted =	is_cir_dlst_sorted(ps->a);
+		is_sorted = is_cir_dlst_sorted(ps->a);
 		if (is_sorted && !ps->b_size)
 			return (0);
 		else if (is_sorted && ps->b_size)
