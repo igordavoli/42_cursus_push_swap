@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_node_value.c                                   :+:      :+:    :+:   */
+/*   get_op.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:25:26 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 15:02:34 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 19:44:34 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_node_value(t_dlist *node)
+char	*get_op(t_dlist *node)
 {
-	return (*(int *)node->content);
+	return ((char *)node->content);
 }

@@ -36,6 +36,8 @@ SRC_FILES	+=	utils/sort.c \
 				utils/is_cir_dlst_sorted.c \
 				utils/print_ops_dlst.c \
 				utils/get_target_index.c\
+				utils/get_op.c\
+				utils/improve_ops.c\
 				sort_huge/sort_huge.c \
 				sort_huge/sort_huge_util.c
 

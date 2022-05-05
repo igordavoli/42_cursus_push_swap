@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:34:52 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/04 14:31:11 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 19:31:15 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,18 @@ static void	full_b(t_push_swap *ps)
 
 static void	execute_ops(t_push_swap *ps)
 {
-	execute_n(ps, ps->chepest.op_a, ps->chepest.n_op_a);
-	execute_n(ps, ps->chepest.op_b, ps->chepest.n_op_b);
+	int	n_ops_a;
+	int	n_ops_b;
+
+	n_ops_a = ps->chepest.n_op_a;
+	n_ops_b = ps->chepest.n_op_b;
+	while (n_ops_a > 0 || n_ops_b > 0)
+	{
+		if (n_ops_a-- > 0)
+			execute(ps, ps->chepest.op_a);
+		if (n_ops_b-- > 0)
+			execute(ps, ps->chepest.op_b);
+	}
 	execute(ps, "pa");
 }
 
