@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:02:02 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/04 14:20:22 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:48:20 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	sort_few(t_push_swap *ps)
 		}
 		execute(ps, "pb");
 	}
-	sort_three(ps, 'a');
+	sort_three(ps);
 	execute_n(ps, "pa", ps->b_size);
 	return (0);
 }

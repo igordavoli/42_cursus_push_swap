@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/04 14:32:33 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:55:26 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ typedef struct s_push_swap
 	int			a_size;
 	t_dlist		*b;
 	int			b_size;
-	t_dlist		*op_lst_bgn;
-	t_dlist		*op_lst_end;
+	t_dlist		*op_lst;
 	t_costpa	chepest;
 }	t_push_swap;
 
@@ -58,16 +57,15 @@ void	push_swap_init(t_push_swap *ps, int list_size);
 void	execute(t_push_swap *ps, char *op);
 void	sort(t_push_swap *ps);
 void	sort_two(t_push_swap *ps);
-void	sort_three(t_push_swap *ps, char stack);
+void	sort_three(t_push_swap *ps);
 int		sort_few(t_push_swap *ps);
-int		sort_few_b(t_push_swap *ps);
+void	sort_huge(t_push_swap *ps);
 void	clear(t_push_swap *ps);
 void	ft_close(t_push_swap *ps, int code);
 int		get_node_value(t_dlist *node);
 int		is_cir_dlst_sorted(t_dlist *dlst);
 void	execute_n(t_push_swap *ps, char *op, int n);
 void	print_ops_dlst(t_dlist *ops);
-void	sort_huge(t_push_swap *ps);
 int		get_target_index(t_dlist *dlst, char target);
 
 #endif

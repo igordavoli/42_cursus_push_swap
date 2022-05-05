@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 22:55:45 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/03 10:18:20 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:56:28 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ static void	ft_set_null(t_push_swap *ps)
 {
 	ps->a = NULL;
 	ps->b = NULL;
-	ps->op_lst_bgn = NULL;
-	ps->op_lst_end = NULL;
+	ps->op_lst = NULL;
 }
 
 static void	create_lst(t_push_swap *ps)

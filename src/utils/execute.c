@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:19:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/04/21 23:52:45 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:55:16 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	execute(t_push_swap *ps, char *op)
 		rrr(ps);
 	else if (!ft_strncmp(op, "rr", 2))
 		rr(ps);
-	ft_dlstadd_back(&(ps->op_lst_end), ft_dlstnew(ft_strdup(op)));
+	ft_dlstadd_back(&(ps->op_lst), ft_dlstnew(ft_strdup(op)));
 }
