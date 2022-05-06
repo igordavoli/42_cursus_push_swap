@@ -139,5 +139,5 @@ fcleanb:
 reb:
 	@make fcleanb && make $(NAME_BONUS)
 
-test: $(NAME) $(NAME_BONUS)
+testb: $(NAME) $(NAME_BONUS)
 	./$(NAME) $(TEST_LIST) | ./$(NAME_BONUS) $(TEST_LIST)
