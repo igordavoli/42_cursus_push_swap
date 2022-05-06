@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 13:39:58 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:35:09 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		is_cir_dlst_sorted(t_dlist *dlst);
 long	get_node_value(t_dlist *node);
 void	get_ops_lst(t_check *check);
 void	execute_ops(t_check *check);
-void	create_lst(t_check *check, long *nums , int size);
+void	create_lst(t_check *check, long *nums, int size);
 int		check_sort(t_check *check);
 
 #endif

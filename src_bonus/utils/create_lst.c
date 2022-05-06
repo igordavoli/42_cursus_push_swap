@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:19:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 13:20:14 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:35:28 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void	create_lst(t_check *check, long *nums , int size)
+void	create_lst(t_check *check, long *nums, int size)
 {
 	int		i;
 	int		*tmp;

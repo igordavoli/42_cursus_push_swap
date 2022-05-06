@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 19:50:16 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:31:43 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/src/libft.h"
-
-# define SA = 0
-# define SB = 1
-# define SS = 2
-# define PA = 3
-# define PB = 4
-# define RA = 5
-# define RB = 6
-# define RR = 7
-# define RRA = 8
-# define RRB = 9
-# define RRR = 10
 
 typedef struct s_idxd
 {

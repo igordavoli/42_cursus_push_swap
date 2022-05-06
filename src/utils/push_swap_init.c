@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 22:55:45 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 19:49:42 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:31:31 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,5 @@ void	push_swap_init(t_push_swap *ps, t_idxd *idxd, int list_size)
 	ps->chepest.n_op_b = list_size;
 	ps->chepest.op_a = "";
 	ps->chepest.op_b = "";
-	// ps->ops = {"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", "rra", "rrb", "RRR"};
 	create_lst(ps, idxd);
 }

@@ -54,7 +54,6 @@ SRC_FILES	+=	operations/sa.c \
 				operations/rrr.c
 
 SRC_FILES_B	=	checker.c \
-				prints.c \
 				utils/check_args.c \
 				utils/execute.c \
 				utils/set_null.c \

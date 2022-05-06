@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:27:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 02:09:05 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/05 23:36:31 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	has_invalid_char(char **argv, int size)
 
 static long	*convert_to_ld(char **argv, int size)
 {
-	int			i;
+	int		i;
 	long	*nums;
 
 	nums = (long *)malloc(sizeof(long) * size);
