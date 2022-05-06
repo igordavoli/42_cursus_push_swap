@@ -97,13 +97,12 @@ $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR)
-	mkdir $(OBJ_DIR)/utils
-	mkdir $(OBJ_DIR)/sort_huge
-	mkdir $(OBJ_DIR)/operations
+	mkdir -p $(OBJ_DIR)/utils
+	mkdir -p $(OBJ_DIR)/sort_huge
+	mkdir -p $(OBJ_DIR)/operations
 
 clean:
-	rm -rf objects
+	rm -rf objects objects_bonus
 
 fclean:
 	make  clean
@@ -118,7 +117,7 @@ test: all
 
 val: all
 	make re
-	$(VALGRIND) ./$(NAME) 3 1 2
+	$(VALGRIND) ./$(NAME) $(TEST_LIST)
 
 bonus: $(NAME_BONUS)
 
@@ -140,9 +139,5 @@ fcleanb:
 reb:
 	@make fcleanb && make $(NAME_BONUS)
 
-playb: $(NAME) $(NAME_BONUS)
+test: $(NAME) $(NAME_BONUS)
 	./$(NAME) $(TEST_LIST) | ./$(NAME_BONUS) $(TEST_LIST)
-
-valb: $(NAME_BONUS)
-	make reb
-	$(VALGRIND) ./$(NAME_BONUS)\
