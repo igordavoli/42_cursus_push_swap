@@ -61,7 +61,6 @@ SRC_FILES_B	=	checker.c \
 				utils/ft_close.c \
 				utils/get_node_value.c \
 				utils/create_lst.c \
-				utils/get_ops_lst.c \
 				utils/execute_ops.c \
 				utils/check_sort.c \
 				utils/is_cir_dlst_sorted.c

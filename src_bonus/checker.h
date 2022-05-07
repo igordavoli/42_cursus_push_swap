@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 23:35:09 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/07 17:50:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,11 @@ void	rrb(t_check *ps);
 void	rrr(t_check *ps);
 void	set_null(t_check *check);
 long	*check_args(int argc, char **argv);
-void	execute(t_check *ps, char *op);
+void	execute(t_check *ps, char *op, int len);
 void	clear(t_check *ps);
 void	ft_close(t_check *ps, int code);
 int		is_cir_dlst_sorted(t_dlist *dlst);
-long	get_node_value(t_dlist *node);
-void	get_ops_lst(t_check *check);
+int		get_node_value(t_dlist *node);
 void	execute_ops(t_check *check);
 void	create_lst(t_check *check, long *nums, int size);
 int		check_sort(t_check *check);

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:27:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 23:40:10 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/07 17:07:14 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ static int	has_invalid_char(char **argv, int size)
 		j = 0;
 		while (argv[i + 1][j])
 		{
-			if (!ft_isdigit(argv[i + 1][j])
-				&& argv[i + 1][j] != '-'
-				&& argv[i + 1][j] != '+')
+			if ((!ft_isdigit(argv[i + 1][j]) && argv[i + 1][j] != '-'
+				&& argv[i + 1][j] != '+') || ft_strlen(argv[i + 1]) > 11)
 				return (1);
 			j++;
 		}
@@ -102,15 +101,15 @@ t_idxd	*check_args(int argc, char **argv)
 		free(idxd);
 		ft_close(NULL, 1);
 	}
-	if (is_sorted(idxd, argc - 1))
-	{
-		free(idxd);
-		exit(0);
-	}
 	if (has_repeated(idxd, argc - 1))
 	{
 		free(idxd);
 		ft_close(NULL, 1);
+	}
+	if (is_sorted(idxd, argc - 1))
+	{
+		free(idxd);
+		exit(0);
 	}
 	indexer(idxd, argc - 1);
 	return (idxd);

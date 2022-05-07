@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:25:26 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/05/05 02:12:40 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:03:03 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-long	get_node_value(t_dlist *node)
+int	get_node_value(t_dlist *node)
 {
-	return (*(long *)node->content);
+	return (*(int *)node->content);
 }

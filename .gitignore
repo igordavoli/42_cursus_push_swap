@@ -2,6 +2,7 @@
 *.d
 .vscode
 *copy
+ops
 # Object files
 *.o
 *.ko
